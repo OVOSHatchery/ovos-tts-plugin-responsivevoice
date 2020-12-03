@@ -46,8 +46,8 @@ If a voice is set lang and gender will be ignored
 ### Voice list
 
 Notes: 
-- this list was automatically scrapped for previous versions of 
-responsive voice and is outdated, some voices behave funny
+- this list was [automatically scrapped](https://github.com/HelloChatterbox/py_responsivevoice/tree/master/data) for previous versions of 
+responsive voice and is outdated, [some voices behave funny](https://github.com/HelloChatterbox/py_responsivevoice/issues/8)
 - There are LOTS of duplicate voices with different names, some seem to have 
 been deprecated and fallback to a different engine
 - All Microsoft voices seem to be deprecated and fallback to english female
