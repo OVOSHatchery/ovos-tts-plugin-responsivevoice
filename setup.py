@@ -12,7 +12,8 @@ setup(
     author_email='jarbasai@mailfence.com',
     license='Apache-2.0',
     packages=['jarbas_tts_plugin_responsivevoice'],
-    install_requires=["requests", "ResponsiveVoice"],
+    install_requires=["requests", "ResponsiveVoice",
+                      'ovos-plugin-manager>=0.0.1a3'],
     zip_safe=True,
     classifiers=[
         'Development Status :: 3 - Alpha',

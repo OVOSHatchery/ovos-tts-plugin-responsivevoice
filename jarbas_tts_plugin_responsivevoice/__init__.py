@@ -10,8 +10,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from mycroft.tts import TTS, TTSValidator
-from mycroft.util.log import LOG
+from ovos_plugin_manager.templates.tts import TTS, TTSValidator
+from ovos_utils.log import LOG
 import requests
 from responsive_voice import ResponsiveVoice
 from responsive_voice import get_voices
