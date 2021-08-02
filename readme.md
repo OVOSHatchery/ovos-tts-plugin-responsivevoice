@@ -1,13 +1,9 @@
 ## Description
 Mycroft TTS plugin for [ResponsiveVoice](https://responsivevoice.org/)
 
-The "plugins" are pip install-able modules that provide new engines for mycroft
-
-more info in the [docs](https://mycroft-ai.gitbook.io/docs/mycroft-technologies/mycroft-core/plugins)
-
 ## Install
 
-`mycroft-pip install jarbas-tts-plugin-responsivevoice`
+`pip install ovos-tts-plugin-responsivevoice`
 
 ## Configuration
 
@@ -17,8 +13,8 @@ NOTE: some voices might ignore pitch / rate / volume
 
 ```json
   "tts": {
-    "module": "responsivevoice_tts_plug",
-    "responsivevoice_tts_plug": {
+    "module": "ovos-tts-plugin-responsivevoice",
+    "ovos-tts-plugin-responsivevoice": {
       "voice": "UKEnglishMale",
       "pitch": 0.5,
       "rate": 0.5,
@@ -33,8 +29,8 @@ If a voice is set lang and gender will be ignored
 
 ```json
   "tts": {
-    "module": "responsivevoice_tts_plug",
-    "responsivevoice_tts_plug": {
+    "module": "ovos-tts-plugin-responsivevoice",
+    "ovos-tts-plugin-responsivevoice": {
       "lang": "en-us",
       "gender": "male",
       "pitch": 0.5,

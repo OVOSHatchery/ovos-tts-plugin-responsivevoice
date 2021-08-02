@@ -1,19 +1,19 @@
 #!/usr/bin/env python3
 from setuptools import setup
 
-PLUGIN_ENTRY_POINT = 'responsivevoice_tts_plug = ' \
-                     'jarbas_tts_plugin_responsivevoice:ResponsiveVoiceTTSPlugin'
+PLUGIN_ENTRY_POINT = 'ovos-tts-plugin-responsivevoice = ' \
+                     'ovos_tts_plugin_responsivevoice:ResponsiveVoiceTTSPlugin'
 setup(
-    name='jarbas-tts-plugin-responsivevoice',
+    name='ovos-tts-plugin-responsivevoice',
     version='0.1',
     description='ResponsiveVoice tts plugin for mycroft',
-    url='https://github.com/JarbasLingua/jarbas-tts-plugin-responsivevoice',
+    url='https://github.com/OpenVoiceOS/ovos-tts-plugin-responsivevoice',
     author='JarbasAi',
     author_email='jarbasai@mailfence.com',
     license='Apache-2.0',
-    packages=['jarbas_tts_plugin_responsivevoice'],
+    packages=['ovos_tts_plugin_responsivevoice'],
     install_requires=["requests", "ResponsiveVoice",
-                      'ovos-plugin-manager>=0.0.1a3'],
+                      'ovos-plugin-manager>=0.0.1a7'],
     zip_safe=True,
     classifiers=[
         'Development Status :: 3 - Alpha',
@@ -32,6 +32,6 @@ setup(
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
     ],
-    keywords='mycroft plugin tts',
+    keywords='mycroft ovos plugin tts',
     entry_points={'mycroft.plugin.tts': PLUGIN_ENTRY_POINT}
 )
