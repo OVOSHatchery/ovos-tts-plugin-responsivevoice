@@ -5,7 +5,7 @@ PLUGIN_ENTRY_POINT = 'ovos-tts-plugin-responsivevoice = ' \
                      'ovos_tts_plugin_responsivevoice:ResponsiveVoiceTTSPlugin'
 setup(
     name='ovos-tts-plugin-responsivevoice',
-    version='0.1',
+    version='0.1.1',
     description='ResponsiveVoice tts plugin for mycroft',
     url='https://github.com/OpenVoiceOS/ovos-tts-plugin-responsivevoice',
     author='JarbasAi',
@@ -13,7 +13,7 @@ setup(
     license='Apache-2.0',
     packages=['ovos_tts_plugin_responsivevoice'],
     install_requires=["requests", "ResponsiveVoice",
-                      'ovos-plugin-manager>=0.0.1a7'],
+                      'ovos-plugin-manager>=0.0.1a12'],
     zip_safe=True,
     classifiers=[
         'Development Status :: 3 - Alpha',

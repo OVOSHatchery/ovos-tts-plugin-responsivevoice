@@ -1,4 +1,4 @@
 requests
 ResponsiveVoice
-ovos-plugin-manager>=0.0.1a7
+ovos-plugin-manager>=0.0.1a12
 phoneme_guesser
