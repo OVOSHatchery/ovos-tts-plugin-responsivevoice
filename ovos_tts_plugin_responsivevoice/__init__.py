@@ -21,26 +21,30 @@ class ResponsiveVoiceTTSPlugin(TTS):
     """Interface to ResponsiveVoice TTS."""
 
     def __init__(self, lang="en-us", config=None):
+        if config:
+            lang = lang or config.get("lang", "en-us")
+        elif not lang:
+            lang = "en-us"
         config = config or {"lang": lang,
                             "pitch": 0.5,
                             "rate": 0.5,
                             "vol": 1}
         super(ResponsiveVoiceTTSPlugin, self).__init__(
             lang, config, ResponsiveVoiceTTSValidator(self), 'mp3')
-        self.pitch = config.get("pitch", 0.5)
-        self.rate = config.get("rate", 0.5)
-        self.vol = config.get("vol", 1)
+        self.gender = config.get("gender", "male")
+        self.pitch = self.config.get("pitch", 0.5)
+        self.rate = self.config.get("rate", 0.5)
+        self.vol = self.config.get("vol", 1)
 
         if self.voice:
             clazz = get_voices()[self.voice]
             self.engine = clazz(pitch=self.pitch, rate=self.rate, vol=self.vol)
         else:
-            gender = config.get("gender", "male")
-            self.engine = ResponsiveVoice(lang=self.lang, gender=gender,
+            self.engine = ResponsiveVoice(lang=self.lang, gender=self.gender,
                                           pitch=self.pitch, rate=self.rate,
                                           vol=self.vol)
 
-    def get_tts(self, sentence, wav_file):
+    def get_tts(self, sentence, wav_file, lang=None):
         """Fetch tts audio using ResponsiveVoice endpoint.
 
         Arguments:
@@ -49,7 +53,12 @@ class ResponsiveVoiceTTSPlugin(TTS):
         Returns:
             Tuple ((str) written file, None)
         """
-        self.engine.get_mp3(sentence, wav_file)
+        if not lang or lang == self.lang:
+            self.engine.get_mp3(sentence, wav_file)
+        else:
+            ResponsiveVoice(lang=lang, gender=self.gender,
+                pitch=self.pitch, rate=self.rate,
+                vol=self.vol).get_mp3(sentence, wav_file)
         return (wav_file, None)  # No phonemes
 
 
@@ -94,5 +103,3 @@ class ResponsiveVoiceTTSValidator(TTSValidator):
                 if lang2 not in langs:
                     langs.append(lang2)
         return sorted(langs)
-
-
